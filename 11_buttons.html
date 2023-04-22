@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- We have created a button inside <a> tag with href attribute to redirect to google.com when clicked.
+         Our button is with background color of black, text color of blue, width and height, radius of 5px.-->
+    <a href="https://www.google.com" target="_blank">
+      <button
+        style="
+          background-color: black;
+          color: blue;
+          width: 100px;
+          height: 50px;
+          border-radius: 5px;
+        "
+      >
+        Click me
+      </button>
+    </a>
+
+    <br />
+
+    <!-- On click this button calls the function doSomething(), which gets the element by id and changes it.
+         This is a simple javascript function.-->
+    <button onclick="doSomething()" style="width: 100px; height: 60px">
+      Click me to Function
+    </button>
+
+    <h1 id="text">HELLO</h1>
+
+    <script>
+      function doSomething() {
+        document.getElementById("text").innerHTML = "Goodbye";
+      }
+    </script>
+  </body>
+</html>

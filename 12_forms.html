@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!--To create a from we use the <form></form> tag-->
+    <form action="action_page" method="POST">
+      <!--We use div tags to seperate this 2 inputs to put them in seperate lines instead of same line.-->
+      <div>
+        <!--Inside the form tag we use label and input specifying the type as text in this case.
+          Is a good practice to use the label for="fname" and give the input an id ="fname".
+          'name' attribute is used to save the data we submit in this variable specified.-->
+        <label for="fname">First Name:</label>
+        <input
+          type="text"
+          id="fname"
+          name="fname"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <br />
+
+      <div>
+        <label for="lname">Last Name:</label>
+        <input
+          type="text"
+          id="lname"
+          name="lname"
+          placeholder="Enter your last name"
+        />
+      </div>
+
+      <br />
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          maxlength="12"
+          required
+        />
+      </div>
+
+      <br />
+      <div>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="youremail@youremail.com"
+          required
+        />
+      </div>
+
+      <br />
+      <div>
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <br />
+      <div>
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" />
+      </div>
+
+      <div>
+        <label for="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="0"
+          max="99"
+          value="1"
+        />
+      </div>
+
+      <!-- The name attribute puts this inputs in the same group so we can only select one of them.
+           If we dont put them in the same group, we can select multiple of them.-->
+      <div>
+        <label for="Mr.">Mr.</label>
+        <input type="radio" name="title" id="Mr." />
+
+        <label for="Mrs.">Mrs.</label>
+        <input type="radio" name="title" id="Mrs." />
+
+        <label for="PhD">PhD</label>
+        <input type="radio" name="title" id="PhD" />
+      </div>
+
+      <br />
+      <div>
+        <label for="payment">Payment</label>
+        <select id="payment" name="payment">
+          <option value="visa">visa</option>
+          <option value="mastercard">mastercard</option>
+          <option value="giftcard">giftcard</option>
+        </select>
+      </div>
+
+      <br />
+
+      <div>
+        <label for="subscribe">subscribe:</label>
+        <input type="checkbox" id="subscribe" name="subscribe" />
+      </div>
+
+      <br />
+      <!--This input type is a build in method that reset the inputs.-->
+      <div>
+        <input type="reset" />
+      </div>
+
+      <br />
+      <!--Build in function that submits our form, but we need to specify the action and method attribute.-->
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+  </body>
+</html>
