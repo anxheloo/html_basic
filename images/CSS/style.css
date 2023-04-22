@@ -1,0 +1,42 @@
+/*
+This is the way we use External css Styling.
+If we change an attribute here, all the changes will be applyed in the html documents we have linked this with.
+*/
+
+body{
+    background-color: black;
+    /*This is the attribute we use to change the font. We add 2 fonts in this way so in case a web browser doesnt support the first, it use the second.*/
+    font-family: "consolas", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: blue underline;
+
+}
+
+h4{
+    color: white;
+}
+
+p{
+    background-color: gray; 
+    color: white;
+}
+
+/* We have choose to change only the element associated with id=p1*/
+#p1{
+    color: blue;
+}
+
+#p2{
+    color: red;
+}
+
+/* We have choose to change only the element associated with this class below.*/
+.odd{
+    background-color:yellow ;
+}
+
+/* We have choose to change only the element associated with this class below.*/
+.even{
+    background-color: orange;
+}
