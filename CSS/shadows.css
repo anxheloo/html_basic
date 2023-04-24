@@ -1,0 +1,11 @@
+
+/*Adding a shadow to h1 tags.*/
+h1{
+  /*Multiple shadows*/
+  text-shadow: 0px 0px 5px yellow, 0px -5px 5px red ;
+}
+
+/*When i hover over h1 elements, this box shadow will appear.*/
+h1:hover{
+box-shadow: 5px 5px 5px black;
+}

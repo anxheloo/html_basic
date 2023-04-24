@@ -1,0 +1,25 @@
+
+#box1{
+  width: 250px;
+  height: 250px;
+  background-color: red;
+  font-size: 225px;
+  text-align: center;
+}
+
+/*Make animation active when i click the box.*/
+#box1:active{
+    /*Activate my animation.*/
+      animation: mySlide;
+      animation-duration: 5s;
+      /*Loop infinitely*/
+      animation-iteration-count: infinite;
+      /*Keep it in linear speed from beggining to end*/
+      animation-timing-function: linear;
+}
+
+/*Create my animation*/
+@keyframes mySlide{
+  from{margin-left:100%;}
+  to{margin-left: 0%;}
+}

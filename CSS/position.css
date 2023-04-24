@@ -1,0 +1,56 @@
+#box1{
+  border: 1px solid;
+  height: 300px;
+  width: 300px;
+  background-color: skyblue;
+
+  /*This is the default attribute. No changes here.
+  => position: static;*/
+
+  /*This gives us more control by moving an element relative to the point it is actually, in this case: 50px from top-bottom, 50px from left-right.*/
+  position: relative;
+  top: 10px;
+  left: 50px;
+}
+
+#box2{
+  border: 1px solid;
+  height: 100px;
+  width: 100px;
+  background-color: tomato;
+
+  /*This searches for a parent positioned non statically such as relative.If it dont find a parent it will use the webpage(body)  We can also put this box inside another box making it a child of a parent box, and moving it inside the first box. 
+    If I move the parent box in this case box1 , box2 will move with it.*/
+     position: absolute;
+      top: 100px;
+      left: 100px;
+}
+
+#box3{
+  border: 1px solid;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+
+  /*Even when we scroll it is going to stay fixed in the position we set it.*/
+  position: fixed;
+    top: 50px;
+    left: 10px;
+}
+
+#box4{
+     border: 1px solid;
+      height: 100px;
+      width: 100px;
+      background-color: red;
+    
+      /*If we scroll and past the position we set it,it is going to stick.*/
+      position: sticky;
+            top: 0px;
+            left: 50px;
+
+}
+
+body{
+  border: 2px solid red;
+}

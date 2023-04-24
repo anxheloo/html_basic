@@ -62,6 +62,7 @@ p{
   }
 
   .box{
+      margin-top: 10px;
         width: 100px;
         height: 100px;
         border: 1px solid;
@@ -69,5 +70,5 @@ p{
         text-align: center;
         background: tomato;
         /*This will make elements float to the left and wrapp elements next to this element.*/
-        float: left;
+       float: left;
   }
