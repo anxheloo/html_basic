@@ -1,6 +1,9 @@
 /*
 
-//1.Display some Output:
+//
+----------------------
+1.Display some Output:
+----------------------
 
 console.log("I like Pizza!");
 console.log(" It's really good!");
@@ -10,13 +13,14 @@ window.alert("I really love pizza!");
 
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /*
+-------------
  2.VARIABLES:
+ ------------
+
 1. Declaration (var, let, const)
 2. Assignment (= assigmnment operator)
-
+---------------------------------------
 
 let name = "Noel"; // String
 let age = 17; // Number
@@ -26,18 +30,19 @@ console.log("Hello", name);
 console.log(name, "is :", age, " Years old!"); //We can also use this way: console.log(name + "is: " + age + " years old!");
 console.log("Entrolled: ", student);
 
-//-------------------------------------------------------------------------------------------------------------//
 
-//3.To change an HTML element using JavaScript
+---------------------------------------------
+3.To change an HTML element using JavaScript
+---------------------------------------------
 document.getElementById("p1").innerHTML = "Hello " + name;
 document.getElementById("p2").innerHTML = "You are " + age + " years old!";
 document.getElementById("p3").innerHTML = "Enrolled: " + student;
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /*
+--------------------
 4.Accept User Input: 
+--------------------
 
 Easy Way (using window prompt):
 let username = window.prompt("Enter your name: ");
@@ -58,22 +63,21 @@ document.getElementById("myButton").onclick = function () {
 
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /*
+-----------------------------------------------------------------------------------------
 5.Type Conversion = change the  data type of a value to another (string, number, boolean)
+-----------------------------------------------------------------------------------------
 
   let age = window.prompt("How old are you?");
   console.log(typeof age);
-  console.log(typeof age)
   age = Number(age);
   age+=1;
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /*
+-----------------------------------------------------------------------------------
 6.const = a variable that can't be changed | Prevent a variable from being changed.
+-----------------------------------------------------------------------------------
 
 const PI = 3.14;
 let radius;
@@ -87,10 +91,10 @@ circumference = 2 * PI * radius;
 console.log("The circumference of our circle is: ", circumference);
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /* 
+----------------------
 7.Some Math functions.
+----------------------
 
 let x = 3.14;
 let y = 5;
@@ -113,10 +117,10 @@ console.log(maximum);
 console.log(minimum);
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /*
+-----------------------------------------------
 8.Program to find the hypotenuse of a triangle. 
+-----------------------------------------------
 
 WAY 1 - With window prompt.
 
@@ -131,7 +135,9 @@ hypotenuse = Math.sqrt(Math.pow(firstSide, 2) + Math.pow(secondSide, 2));
 console.log("The hypotenuse of the Triangle is: ", hypotenuse);
 
 
+---------------------------
 WAY 2 - Using HTML inputs: 
+---------------------------
 
 let hypotenuse;
 let firstSide;
@@ -152,10 +158,10 @@ document.getElementById("myButton").onclick = function () {
 };
 */
 
-//-------------------------------------------------------------------------------------------------------------//
-
 /* 
+----------------------------------------------------
 9.Exercise to Increase, Decrease and Reset the Text.
+----------------------------------------------------
 
 //WAY 1:
 
@@ -205,7 +211,10 @@ function decrease() {
 
 //-------------------------------------------------------------------------------------------------------------//
 
-/*10.Useful String properties & Methods:
+/*
+--------------------------------------
+10.Useful String properties & Methods:
+--------------------------------------
 
 let username = "  Anxheloo  ";
 console.log(username.length);
@@ -224,6 +233,7 @@ let phoneNumber = "123-123-123";
 console.log(phoneNumber);
 console.log(phoneNumber.replaceAll("-", " "));
 
+--------
 SLICING:
 --------
 
@@ -247,7 +257,10 @@ console.log(firstname);
 
 */
 
-/*11.Check if checkboxes and radiobuttons are selected: we get a boolean value.
+/*
+-----------------------------------------------------------------------------
+11.Check if checkboxes and radiobuttons are selected: we get a boolean value.
+-----------------------------------------------------------------------------
 
 function check() {
   const checked = document.getElementById("subscribe").checked;
@@ -274,7 +287,10 @@ function check() {
 
 */
 
-/*12.SWITCH CASE |Suggested to use when we have many if else statements.
+/*
+-------------------------------------------------------------------------------------------------------------------------------
+12.SWITCH CASE, FOR LOOP, BREAK, CONTINUE, TERNARY OPERATOR |Suggested to use switch case when we have many if else statements.
+-------------------------------------------------------------------------------------------------------------------------------
 
 let grade = "A";
 
@@ -300,7 +316,7 @@ switch (grade) {
     console.log(grade, "is not a letter grade!");
 }
 
-
+--------------
 DO WHILE LOOP:
 -------------- 
                 Do something, then check the condition, repeat if condition is true.
@@ -314,9 +330,9 @@ DO WHILE LOOP:
 
                 console.log("Hello", username);
 
-
+----------------------------
 FOR LOOP , break & continue:
----------
+----------------------------
 for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
@@ -338,9 +354,9 @@ for (let i = 1; i <= 10; i++) {
   console.log(i);
 }
 
-
+--------------------------
 EXERCISE |NESTED FOR LOOP:
----------
+--------------------------
 
 let symbol = window.prompt("Enter a symbol: ");
 let rows = window.prompt("Enter number of rows: ");
@@ -352,5 +368,300 @@ for (let i = 0; i <= rows; i++) {
   }
   document.getElementById("mylabel").innerHTML += "<br>";
 }
+
+
+---------------------------------------------------
+Ternary operator = shortcut for if/else statement.
+--------------------------------------------------- 
+
+ 1-a condition with ? 
+ 2-expression if True : 
+ 3-expression if False
+
+let adult = checkAge(21);
+
+function checkAge(age) {
+  return age >= 18 ? true : false;
+}
+
+console.log(adult);
+
+*/
+
+/*
+-----------------------------------------------
+Function = Define once, and use it many times.
+-----------------------------------------------
+
+startProgram();
+
+function startProgram() {
+  let username = window.prompt("Enter a name:");
+  let age = window.prompt("Enter age: ");
+  happy(username, age);
+}
+
+function happy(a, b) {
+  console.log("Happy your ", b, " birthday", a, ", wish u luck!");
+}
+
+-----------------------------------------
+Find area of a Rectangle using Functions:
+-----------------------------------------
+
+let area;
+let width;
+let height;
+
+width = window.prompt("Enter width");
+height = window.prompt("Enter height");
+
+function calculate(a, b) {
+  return a * b;
+}
+
+area = calculate(width, height);
+console.log("Area is: " + area);
+
+
+
+-------------------------------------------------
+ Variable Scope = Where a Variable is Accessible
+ -----------------------------------------------
+
+ let = variables are limited to block scope {}
+ var = variables are limited to function scope {}
+
+ global variable = Suggested to use let instead of var, cuz it will mess with browser
+
+
+
+ -----------------------------------------------
+ Template Literals (``), different from ('')
+ ----------------------------------------------
+
+let username = "Bro";
+let items = 3;
+let price = 80;
+
+console.log("Hello", username);
+console.log("You have", items, "items in your cart.");
+console.log("Your total is:", price);
+
+console.log(`Hello ${username}`);
+console.log(`You have ${items} items in your cart.`);
+console.log(`Your total is: ${price}`);
+
+//We use this <br> tags here but they will be printed as they are here without any functionality.
+let text = `Hello ${username}<br>
+            You have ${items} items in your cart.<br>
+            Your total is: ${price}.`;
+console.log(text);
+
+//When we set the <label> text to be equal to our 'text' variable, <br> tags will work.
+document.getElementById("myLabel").innerHTML = text;
+
+*/
+
+/* 
+------------------------
+14.NUMBER GUESSING GAME
+------------------------
+
+const answer = Math.floor(Math.random() * 10 + 1);
+console.log(answer);
+let guesses = 0;
+
+function does() {
+  let guess = document.getElementById("guessField").value;
+  // guess = Number(guess);
+
+  if (guess != Number(guess)) {
+    window.alert("Enter a number not a letter.");
+  }
+
+  if (guess == answer) {
+    window.alert(`${answer} is the #. It took you ${guesses} guesses.`);
+  } else if (guess < answer) {
+    window.alert("Too Small!");
+  } else if (guess > answer) {
+    window.alert("Too Large!");
+  }
+
+  guesses += 1;
+  document.getElementById("guessField").value = "";
+}
+
+*/
+
+/* 
+----------------------
+15.Convert Temperature 
+---------------------
+
+let temporary;
+let celcius;
+let farenight;
+let result;
+
+//When button is click it will call this function
+function convert() {
+  //CHeck if the radio button for celcius is checked
+  celcius = document.getElementById("celcius").checked;
+  //CHeck if the radio button for farenight is checked
+  farenight = document.getElementById("Fahreneight").checked;
+  //Get the value in the textbox
+  temporary = document.getElementById("tempbox").value;
+
+  //If no value is entered show an alert to enter a value.
+  if (temporary == "") {
+    alert("Enter a Value to Continue");
+  }
+  //Else, check if calcius is checked and convert to celcius or if farenight is checked convert to farenight
+  else {
+    if (celcius) {
+      result = (temporary - 32) / 1.8;
+      document.getElementById("result").innerHTML = result + "°C";
+    } else if (farenight) {
+      result = temporary * 1.8 + 32;
+      document.getElementById("result").innerHTML = result + "°F";
+    } else {
+      alert("Please, Select a type of temp to convert to: ");
+    }
+  }
+}
+
+*/
+
+/* 
+-------------------------------------------------------
+ 16.Array = a container that can store multiple values.
+-------------------------------------------------------
+
+let fruits = ["apple", "orange", "banana"];
+console.log(fruits);
+
+//Changing the element at index 2 from banana to lemon
+fruits[2] = "lemon";
+console.log(fruits);
+
+//Printing element at index 1
+console.log(fruits[1]);
+
+//Adding another fruit
+fruits.push("Coconut");
+console.log(fruits);
+
+//Removing the last fruit
+fruits.pop();
+console.log(fruits);
+
+//Add element to beggining of the list
+fruits.unshift("peanapple");
+console.log(fruits);
+
+//Remove element from beggining of the list
+fruits.shift();
+console.log(fruits);
+
+//Print the length of the array
+console.log(fruits.length);
+
+//Sort the list in alphabetic order
+fruits.sort();
+
+//Sort the list in reverse alphabetic order
+fruits.sort().reverse();
+
+//ITERATE OVER AN ARRAY
+
+let prices = [5, 10, 15, 20, 25];
+
+//WAY 1 - OLD SCHOOL
+for (let i = 0; i < prices.length; i++) {
+  console.log(prices[i]);
+}
+
+//WAY 2 - Using forEach Function
+prices.forEach(function (price) {
+  console.log(price);
+});
+
+//WAY 3
+for (let price in prices) {
+  console.log(prices[price]);
+}
+
+//WAY 4
+for (let price of prices) {
+  console.log(price);
+}
+
+//2D array
+let f = ["apple", "orange", "banana"];
+let vegetables = ["carrots", "onions", "patatoes"];
+let meats = ["eggs", "chicken", "fish"];
+
+let groceryList = [f, vegetables, meats];
+
+for (let i = 0; i < groceryList.length; i++) {
+  for (let j = 0; j < groceryList[0].length; j++) {
+    console.log(groceryList[i][j]);
+  }
+  console.log(" ");
+}
+
+*/
+
+/* 
+------------------------------------------------------------------------------------------------------------------------------
+17.SPREAD OPERATOR = unpack elements such as arrays or strings, useful when we have a list and want to pass those elements 
+as arguments in a function, so we can't pass it as a list but we want individual elements. Thats why we use spread operator.
+------------------------------------------------------------------------------------------------------------------------------
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(numbers);
+
+//Doesnt work
+// let maximum = Math.max(numbers)
+
+//This works
+let maximum = Math.max(...numbers);
+console.log(maximum);
+
+let a = [1, 2, 3, 4, 5];
+let b = [6, 7, 8, 9];
+
+//This will be added as a whole array without specifying elements
+a.push(b);
+console.log(a);
+
+//To add elements one by one, we need to unpack the 'b' array and add them.
+a.push(...b);
+console.log(a); 
+
+----------------------------------------
+REST PARAMETERS - is opposite of SPREAD
+---------------------------------------
+
+//Lets say we have many variables and we want to build a function that calculates the sum of our variables, but 
+the number of arguments for that function may change. 
+
+let a = 1;
+let b = 2;
+let c = 4;
+let d = 5;
+
+console.log(sum(a, b));
+console.log(sum(a, b, c, d));
+
+function sum(...numbers) {
+  let result = 0;
+  for (let i of numbers) {
+    result += i;
+  }
+  return result;
+}
+
 
 */
