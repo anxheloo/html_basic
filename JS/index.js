@@ -573,7 +573,9 @@ fruits.sort();
 //Sort the list in reverse alphabetic order
 fruits.sort().reverse();
 
+---------------------------------------------------------------------------------------------
 //ITERATE OVER AN ARRAY
+---------------------------------------------------------------------------------------------
 
 let prices = [5, 10, 15, 20, 25];
 
@@ -665,3 +667,273 @@ function sum(...numbers) {
 
 
 */
+
+/* 
+---------------------------------------------------------------
+19.CALLBACKS - pass a function as argument to another function.
+---------------------------------------------------------------
+In this case: 
+1- We have created function displayDOM() with 1 parameter to change an HTML element.
+2- function p() with 1 argument to print on console.
+3-function sum() that takes 2 variables as parameters and 2 functions. 
+
+
+sum(5, 7, displayDOM, p);
+
+
+function sum(x, y, ourFunction, ourFunction2) {
+  let sum = x + y;
+  ourFunction(sum);
+  ourFunction2(sum);
+}
+
+function displayDOM(output) {
+  document.getElementById("mylabel").innerHTML = output;
+}
+
+function p(output) {
+  console.log(output);
+}
+*/
+
+/* 
+----------------------------------------------------------------------------------------------------------------
+20.map() and forEach() functions are used to iterate over arrays and perform operations on each element.
+   The main difference between the map() and forEach() functions is: the map() function returns a new array, 
+   while the forEach() function does not. 
+----------------------------------------------------------------------------------------------------------------
+
+//1.We create the list
+numbers = [1, 2, 3, 4];
+
+//2.We create the function to square given element
+function square(element) {
+  return Math.pow(element, 2);
+}
+
+//3.Function print for printing given element
+function print(element) {
+  console.log(element);
+}
+
+//4.Executes square function for each element of the numbers list using map().
+let squares = numbers.map(square);
+
+//5.Executing print function for each element of our new list using forEach function.
+squares.forEach(print);
+
+---------------
+MAP EXAMPLE
+--------------
+
+const characters = [
+  {
+    name: "Luke Skywalker",
+    height: "172",
+    mass: "77",
+    eye_color: "blue",
+    gender: "male",
+    age: 22,
+  },
+  {
+    name: "Darth Vader",
+    height: "202",
+    mass: "136",
+    eye_color: "yellow",
+    gender: "male",
+    age: 20,
+  },
+  {
+    name: "Leia Organa",
+    height: "150",
+    mass: "49",
+    eye_color: "brown",
+    gender: "female",
+    age: 16,
+  },
+  {
+    name: "Anakin Skywalker",
+    height: "188",
+    mass: "84",
+    eye_color: "blue",
+    gender: "male",
+    age: 21,
+  },
+];
+
+//WAY 1
+let names = characters.map(getNames);
+console.log(names);
+
+function getNames(datas) {
+  return datas.name;
+}
+
+//WAY 2
+let names = characters.map((character) => character.name);
+console.log(names);
+
+
+//GET CHARACTER NAMES AND GENDER: 
+let datas = characters.map((character) => ({
+  name: character.name,
+  gender: character.gender,
+}));
+console.log(datas);
+
+// GET ONLY THE FIRST NAME FROM THE FULL NAME
+
+let fullname = characters.map(character => character.name.split(" ")[0])
+
+let append! = fullname.map((character) => character + "!");
+console.log(a);
+
+----------------------------------------------------------------------------------------------------
+filter() - creates a new array with all elements that passes the condition provided by the function.
+----------------------------------------------------------------------------------------------------
+
+const characters = [
+  {
+    name: "Luke Skywalker",
+    height: "172",
+    mass: "77",
+    eye_color: "blue",
+    gender: "male",
+    age: 22
+  },
+  {
+    name: "Darth Vader",
+    height: "202",
+    mass: "136",
+    eye_color: "yellow",
+    gender: "male",
+    age: 20
+  },
+  {
+    name: "Leia Organa",
+    height: "150",
+    mass: "49",
+    eye_color: "brown",
+    gender: "female",
+    age: 16
+  },
+  {
+    name: "Anakin Skywalker",
+    height: "188",
+    mass: "84",
+    eye_color: "blue",
+    gender: "male",
+    age: 21
+  },
+];
+
+
+//WAY 1
+function checkAge(element) {
+  return element >= 18;
+}
+
+let checkAge = characters.filter(checkAge);
+
+console.log(checkAge);
+
+//WAY 2
+let checkGender = characters.filter(
+  (character) => character.gender === "male"
+);
+
+
+-------------------------------------------------------------------------------------------------
+reduce() - For Example: Calculate the total mass for each of our characters |Type of accumulator
+-------------------------------------------------------------------------------------------------
+
+//1. Get total mass of all characters
+let totalMass = characters.reduce(
+  (acc, cur) => acc + Number(cur.mass), // acc is the accumulated value, cur is the current value, 0 is the starting point
+  0
+);
+
+console.log(totalMass);
+
+//2. Get total height
+let totalHeight = characters.reduce((acc, cur) => acc + Number(cur.height), 0);
+console.log(totalHeight);
+
+//3. Get total number of characters by eye color
+let result = characters.reduce((acc, cur) => {
+  const color = cur.eye_color;
+  if (acc[color]) {
+    acc[color]++;
+  } else {
+    acc[color] = 1;
+  }
+  return acc;
+}, {});
+
+
+
+// let prices = [20, 30, 40, 50, 60, 30];
+// let total = prices.reduce(checkout);
+
+// function checkout(total, element) {
+//   return (total += element);
+// }
+
+// console.log(total);
+
+
+
+
+/*
+
+
+-------------------------------------------------------------------------------------
+some() - At least one character with these features
+-------------------------------------------------------------------------------------
+
+1.Is there at least one male character?
+
+let oneMaleCharacter = characters.some(
+  (character) => character.gender === "male");
+
+2.Is there at least one character with blue eyes?
+
+let blueEye = characters.some((character) => character.eye_color === "blue");
+console.log(blueEye);
+
+
+//3.NOTE: Difference between some() and filter() method is that the first checks if at least one data passes the condition 
+while filter add the data that passes the condition to a new list. 
+
+let height = characters.some((character) => character.height >= 202);
+let filterHeight = characters.filter((character) => character.height > 210);
+
+ */
+
+/*
+
+
+---------------------------------------------------------
+sort()
+---------------------------------------------------------
+
+// Sort by mass
+let byMass = characters.sort();
+console.log(byMass);
+
+// Sort by gender
+let byGender = characters.sort((a, b) => {
+  if (a === "female") return -1; // returns females first
+  return 1; // than return males
+});
+
+console.log(byGender);
+
+let myNames = characters.sort((a, b) => {
+  if (a.name > b.name) return -1;
+  return 1;
+});
+
+console.log(myNames);
+
+ */
