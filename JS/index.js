@@ -917,23 +917,281 @@ let filterHeight = characters.filter((character) => character.height > 210);
 sort()
 ---------------------------------------------------------
 
-// Sort by mass
-let byMass = characters.sort();
+// 1.Sort by mass
+let byMass = characters.sort((a, b) => {
+  if (Number(a.mass) > Number(b.mass)) return -1;  //return -1 means we are sorting from biggest value to lowest
+  return 1;
+});
 console.log(byMass);
 
-// Sort by gender
+
+// 2.Sort by gender
 let byGender = characters.sort((a, b) => {
   if (a === "female") return -1; // returns females first
   return 1; // than return males
 });
-
 console.log(byGender);
 
+
+// 3.Sort by names
 let myNames = characters.sort((a, b) => {
   if (a.name > b.name) return -1;
   return 1;
 });
-
 console.log(myNames);
 
+
+// 4.Sort by height
+let height = characters.sort((a, b) => {
+  if (a.height > b.height) return 1;
+  return -1;
+});
+console.log(height);
+
+
+// 5.Sort numbers on the list | way 1:
+let grades = [1, 7, 3, 2, 18];
+sortedGrades = grades.sort((a, b) => {
+  if (a > b) return 1;
+  return -1;
+});
+console.log(sortedGrades);
+
+//5.Sort numbers on the list | way 2:
+let grades = [1, 7, 3, 2, 18];
+sortedGrades = grades.sort((a, b) => a - b); // a - b returns the sorted list in ascending order, otherwise descending
+console.log(sortedGrades);
+
+
+// 6.Sort an Array manually in ascending order
+let array = [1, 4, 6, 2, 11, 9];
+for (let i = 0; i < array.length; i++) {
+  for (let j = i + 1; j < array.length; j++) {
+    if (array[i] > array[j]) {
+      let temp = array[j];
+      array[j] = array[i];
+      array[i] = temp;
+    }
+  }
+}
+console.log(array);
+
+
+// 7.Sort an array in ascending order manually
+let array = [1, 4, 6, 2, 11, 9];
+
+for (let i = 0; i < array.length; i++) {
+  for (let j = i + 1; j < array.length; j++) {
+    if (array[i] < array[j]) {
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+  }
+}
+console.log(array);
+
  */
+
+/* 
+---------------------------------------------------------------------------------------------------------------------------
+21.A LITTLE EXAMPLES OF FUNCTIONS: 
+---------------------------------------------------------------------------------------------------------------------------
+
+// let count = 0;
+
+//WAY 1 : create the function and add at the button as attribute onclick="name of your function"
+  function increase() {
+    count++;
+    document.getElementById("myLabel").innerHTML = count;
+  }
+
+function decrease() {
+  count--;
+  document.getElementById("myLabel").innerHTML = count;
+}
+
+//WAY 2: Get button element adding .onclick = to the function or action we want to happen
+// document.getElementById("button1").onclick = function () {
+//   count++;
+//   document.getElementById("myLabel").innerHTML = count;
+// };
+
+// document.getElementById("button2").onclick = function () {
+//   count--;
+//   document.getElementById("myLabel").innerHTML = count;
+// };
+
+// // Create the function with its name.
+function print(name) {
+  console.log(`Printing ${name}`);
+}
+print("Anxhelo");
+
+// Create a variable that saves the function inside.
+const func1 = function (name) {
+  console.log(`Printing: ${name}`);
+};
+func1("Beqo");
+
+// SAME AS ABOVE BUT USING ARROW FUNCTION 
+const myfunc = (name) => console.log(`Hello: ${name}`);
+myfunc("Anxhelo");
+
+*/
+
+/* 
+---------------------------------------------------------------------------------------------------------------------------
+22. MAP OBJECT => Object that holds key, value pairs of any data type
+---------------------------------------------------------------------------------------------------------------------------
+
+//WAY 1 OF DECLARATION | ("key", value)
+const myMap = new Map();
+myMap.set("t-shirt", 20); // add an item to the Map
+myMap.set("trousers", 30);
+myMap.set("dress", 50);
+
+//WAY 2 OF DECLARATION
+// const myMap = new Map([
+//   ["t-shirt", 20],
+//   ["trousers", 30],
+//   ["dress", 50],
+// ]);
+
+// Get the value, giving the key
+console.log(myMap.get("t-shirt"));
+
+// Check for a given key if it exists or not
+console.log(myMap.has("trousers"));
+
+// Print each item with its value using forEach
+myMap.forEach((x, y) => console.log(`Item ${y} costs ${x}`));
+
+// Calulate the total price of the products in the Map
+let shoppingCart = 0;
+for (let [i, j] of myMap) {
+  shoppingCart += j;
+}
+
+console.log(`Total price to pay is: ${shoppingCart}`);
+
+*/
+
+/*
+------------------------------------------------------------------------------------------------------------------------
+23.OBJECT - a group of properties(what an object has) and methods(what an object can do) 
+------------------------------------------------------------------------------------------------------------------------
+
+const car = {
+  model: "AUDI",
+  color: "RED",
+  year: 2023,
+
+  drive: function () {
+    console.log("You started the engine!");
+  },
+
+  brake: function () {
+    console.log("You pressed the brake pedal!");
+  },
+
+  // Instead of using 'car.model' or 'car.color' we can simply use 'this.model' or 'this.color'
+  stop: function () {
+    // console.log(`Your ${car.model} car with color ${car.color} stopped!`);
+    console.log(`Your ${this.model} car with color ${this.color} stopped!`);
+  },
+};
+
+console.log(car.model); // to call the attributes
+console.log(car.color);
+console.log(car.year);
+
+car.drive();
+car.brake();
+car.stop();
+*/
+
+/* 
+-----------------------------------------------------------------------------------------------------------------------
+24.CLASSES - a blueprint for creating objects
+----------------------------------------------------------------------------------------------------------------------
+
+class Player {
+  score = 0;
+
+  pause() {
+    console.log("You paused the game");
+  }
+
+  exit() {
+    console.log("You exited the game");
+  }
+}
+
+const player1 = new Player();
+console.log(player1.score);
+player1.score++;
+console.log(player1.score);
+player1.exit();
+
+*/
+
+/* 
+------------------------------------------------------------------------------------------------------------
+25.CONSTRUCTOR - A specical method of the class that accepts arguments and assigns properties
+------------------------------------------------------------------------------------------------------------
+
+class Student {
+  
+  constructor(name, age, gpa) {
+    this.name = name;
+    this.age = age;
+    this.gpa = gpa;
+  }
+
+  study() {
+    console.log(this.name, " is studying");
+  }
+}
+
+student1 = new Student("Anxhelo", 25, 95.3);
+student1.study();
+console.log(student1.name);
+
+*/
+
+/* 
+--------------------------------------------------------------------------------------------------------------
+26.STATIC - static properties and static methods belongs to the class itself not objects.
+-------------------------------------------------------------------------------------------------------------
+
+class Car {
+  // To create a static property
+  static numberOfCars = "0";
+
+  constructor(model, year, color) {
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    // To call and increment the static property we use the name of the class itself: "CAR.numberOfCars"
+    // Each time a create a Car object, this static property will be incremented
+    Car.numberOfCars++;
+  }
+
+  // To create a static method
+  static race() {
+    console.log("3..2..1..GOO!");
+  }
+}
+
+car1 = new Car("Ford", 1996, "red");
+car2 = new Car("Benz", 1772, "blue");
+
+// To call and increment the static property we use the name of the class itself: "CAR.numberOfCars"
+console.log(Car.numberOfCars);
+
+// To call the static method we use the name of the class itself: "CAR.race()". 
+//We cant call it using 'car1.race()', cuz it belongs to the Car class itself
+Car.race();
+
+*/
