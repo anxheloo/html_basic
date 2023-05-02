@@ -589,6 +589,8 @@ prices.forEach(function (price) {
   console.log(price);
 });
 
+prices.forEach(element => console.log(element));
+
 //WAY 3
 for (let price in prices) {
   console.log(prices[price]);
@@ -1193,5 +1195,246 @@ console.log(Car.numberOfCars);
 // To call the static method we use the name of the class itself: "CAR.race()". 
 //We cant call it using 'car1.race()', cuz it belongs to the Car class itself
 Car.race();
+
+*/
+
+/* 
+-------------------------------------------------------------------------------------------
+27.INHERITANCE -> a child class can inherit all the methods and properties from another class.
+-------------------------------------------------------------------------------------------
+
+// Every method or property that is not unique but are the same on all classes,
+//we keep on the parent class and extend from the child.
+class Animal {
+  alive = true;
+  eat() {
+    console.log(`THis ${this.name} is eating`);
+  }
+  sleep() {
+    console.log(`THis ${this.name} is sleeping`);
+  }
+}
+
+class Rabbit extends Animal {
+  name = "rabbit";
+  //Every method or property that is unique to the child classes we should keep them.
+  run() {
+    console.log(`THis ${this.name} is running`);
+  }
+}
+
+class Hawk extends Animal {
+  name = "Hawk";
+  fly() {
+    console.log(`THis ${this.name} is flying`);
+  }
+}
+
+//Now lets create some Animal objects.
+const rabbit = new Rabbit();
+const hawk = new Hawk();
+
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
+rabbit.run();
+
+console.log(hawk.alive);
+hawk.eat();
+hawk.sleep();
+hawk.fly();
+*/
+
+/* 
+-------------------------------------------------------------------------------------------------------
+28.SUPER keyword -> Refers to the parent class. Commonly used to invoke constructor of a parent class
+-------------------------------------------------------------------------------------------------------
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Rabbit extends Animal {
+  constructor(name, age, runSpeed) {
+    // super(name, age);
+    this.name = name;
+    this.age = age;
+    this.runSpeed = runSpeed;
+  }
+}
+
+class Fish extends Animal {
+  constructor(name, age, swimSpeed) {
+    super(name, age);
+    this.swimSpeed = swimSpeed;
+  }
+}
+
+const rabbit = new Rabbit("rabbit", 1, 40);
+const fish = new Fish("fish", 2, 80);
+
+console.log(rabbit.name);
+console.log(rabbit.age);
+console.log(rabbit.runSpeed);
+*/
+
+/* 
+----------------------------------------------------------------------------------------
+29.GETTERS & SETTERS
+----------------------------------------------------------------------------------------
+
+class Car {
+  constructor(power) {
+    //'_gas, _power' is only a convention, and JavaScript does not actually enforce private access to properties and methods.
+    //We as programmers know that we should access this using getters and setters
+    this._gas = 25;
+    this._power = power;
+  }
+
+  get power() {
+    return `${this._power}hp`;
+  }
+
+  get gas() {
+    return `${this._gas}L (${(this._gas / 50) * 100}%)`;
+  }
+
+  set gas(value) {
+    if (value > 50) {
+      value = 50;
+    } else if (value < 0) {
+      value = 0;
+    }
+    this._gas = value;
+  }
+}
+
+let car = new Car(400);
+// We access getters and setters as properties instead of : car.power() we just use car.power
+car.gas = -100;
+console.log(car.power);
+console.log(car.gas);
+
+*/
+
+/* 
+------------------------------------------------------------------------------------------------------
+30.ERROR -> object with a description of something went wrong
+   THROW -> executes a user-defined error
+------------------------------------------------------------------------------------------------------
+
+  try {
+  let x = window.prompt("Enter a number: ");
+  x = Number(x);
+
+  if (isNaN(x)) throw `Thats not a number!`;
+  if (x == "") throw "That was empty!";
+
+  console.log(`${x} is a number!`);
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log("This always executes.");
+}
+
+*/
+
+/* 
+------------------------------------------------------------------------------------------------------
+31.setTimeout() function
+------------------------------------------------------------------------------------------------------
+
+// Example 1 - using a function declaration as the callback
+function callback1() {
+  console.log('Hello from callback1!');
+}
+
+setTimeout(callback1, 1000); // call callback1 after 1000ms (1 second)
+
+// Example 2 - using an anonymous function as the callback
+setTimeout(function() {
+  console.log('Hello from anonymous callback!');
+}, 2000); // call the anonymous function after 2000ms (2 seconds)
+
+// Example 3 - using an arrow function as the callback
+setTimeout(() => {
+  console.log('Hello from arrow callback!');
+}, 3000); // call the arrow function after 3000ms (3 seconds)
+*/
+
+/*
+---------------------------------------------------------------------------------------------
+32.setInterval() -> invokes a function repeatedly after a number of times
+---------------------------------------------------------------------------------------------
+
+let count = 0;
+
+let max = window.prompt("Count up to what #?");
+max = Number(max);
+
+// We pass the function countUp as a callback and the number(1000) which is after how many seconds we repeat the function
+let myTimer = setInterval(countUp, 1000);
+
+function countUp() {
+  count++;
+  console.log(count);
+  if (count >= max) {
+    clearInterval(myTimer); //stop the counter when the condition is true
+  }
+}
+
+*/
+
+/* 
+--------------------------------------------------------------------------
+32.DATE object -> used to work with dates and times | SIMPLE CLOCK PROGRAM
+--------------------------------------------------------------------------
+
+//WAY 1 - Simple Clock Program
+myDate = setInterval(myDate, 1000);
+function myDate() {
+  let date = new Date();
+  date = date.toLocaleString();
+  document.getElementById("myDate").innerHTML = date;
+}
+
+// //WAY2 - Simple Clock Program
+myDate = setInterval(() => {
+  let date = new Date();
+  date = date.toLocaleString();
+  document.getElementById("myDate").innerHTML = date;
+});
+
+//SIMPLE CLOCK PROGRAM
+const myLabel = document.getElementById("myDate");
+update();
+setInterval(update, 1000);
+
+function update() {
+  let date = new Date();
+  myLabel.innerHTML = formatTime(date);
+
+  function formatTime(date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    let amOrPm = hours >= 12 ? "pm" : "am";
+
+    hours = hours % 12 || 12;
+
+    hours = formatZeros(hours);
+    minutes = formatZeros(minutes);
+    seconds = formatZeros(seconds);
+
+    return `${hours}:${minutes}:${seconds} ${amOrPm}`;
+  }
+  function formatZeros(time) {
+    time = time.toString();
+    return time.length < 2 ? "0" + time : time;
+  }
+}
 
 */
