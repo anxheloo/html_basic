@@ -1638,3 +1638,87 @@ function begin() {
 } 
 
 */
+
+/* 
+-----------------------------------------------------------------------------------------------------------------------------
+OBJECT DESCTRUCTING
+-----------------------------------------------------------------------------------------------------------------------------
+
+// EXAMPLE 1
+
+// we can also use this array function but it needs to be set before ''const [sum, multiply] = sum_multiply(2,3)'
+// const sum_multiply = (x,y) => {
+//   return [x+y, x*y]             
+// }
+const [sum, multiply] = sum_multiply(2,3)
+function sum_multiply(x,y){
+  return [x+y, x*y]
+}
+console.log(sum)
+console.log(multiply)
+
+
+// EXAMPLE 2
+
+//  we create the array
+alphabet = ["A", "B", "C", "D"]
+// const [a,b] = alphabet    console.log(a,b) // save the first and second value to a const variable
+// const[a,,c] = alphabet    console.log(a,c) // deconstruct the first, empty second, and third
+// const[a,b,...letters] = alphabet              // get first element,second, and all the rest using spread operator '...'
+// console.log(a,b,...letters)
+
+*/
+
+/*
+---------------------------------------------------------------------------------------------------------------
+OBJECT DESCTRUCTING
+---------------------------------------------------------------------------------------------------------------
+
+const Person1 = {
+
+  name: "Anxhelo",
+  age : 26,
+  address: {
+    city: "Tirana",
+    state: "Crazy Albania",
+  },
+  future : () => console.log("JAM I SUKSESSHEM!")
+}
+
+const Person2 = {
+
+  name: "Noel",
+  age : 13,
+  address: {
+    city: "Tirana",
+    state: "Crazy Albania",
+  },
+  future : () => console.log("JAM I SUKSESSHEM SI VELLAI!")
+}
+
+Person1.future()  // call the function 'future'
+console.log(Person1.address.city)  // call the 'Person1' 'city' inside 'address'
+
+// 1. deconstruct 'name' and 'address' from 'Person1' Object
+const {name, address} = Person1 
+// 2. print name and address properties saved in const variable
+console.log(name, address) 
+
+// To get the nested element inside nested object 'address', for example to get 'city'
+const {name, address: {city}} = Person1 
+console.log(name, city)
+
+// 1. get the name from Person1 and map to firstName, same with address
+const {name:firstName, address: lokacionin} = Person2
+console.log(firstName, lokacionin)
+
+
+// USING DECONSTRUCTING ALSO IN FUNCTIONS 
+function printUser({name,age}){
+  console.log(`Name is ${name}. Age is ${age}`)
+}
+
+printUser(Person2)
+
+*/
+
