@@ -116,7 +116,6 @@ let production = () => {
 order(0, production);
 */
 
-
 /* 
 ------------------------------------------------------------------------------------------------------------------------------------
 PROMISES - provide a cleaner and more readable way to handle asynchronous operations than callbacks.
@@ -173,8 +172,30 @@ order(2000, ()=> console.log(`${ingridients.Fruits[0]} was selected!`))
 
 
 .finally( () => console.log("DAY ENDED!"))
-*/
 
+
+
+
+----------------
+ANOTHER EXAMPLE
+----------------
+
+// We give 2 arguments, if loaded we resolve, else we reject
+const promise = new Promise((resolve,reject)=>{  
+
+  let fileLoaded = true;
+  if(fileLoaded){
+    resolve("File Loaded!")
+  }
+  else{
+    reject("File Not loaded!")
+  }
+
+})
+
+promise.then(value => console.log(value))
+.catch(error => console.log(error))
+*/
 
 /* 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -242,8 +263,6 @@ kitchen();
 
 
 */
-
-
 
 /*
 -----------------------------------------------------------------------------------------------------

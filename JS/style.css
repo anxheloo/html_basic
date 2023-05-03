@@ -5,3 +5,13 @@
 div{
   text-align: center;
 }
+
+#myDiv{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-width: 2px;
+  border-style: double;
+  border-color: black;
+  position: relative;
+}

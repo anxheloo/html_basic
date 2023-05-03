@@ -1,0 +1,43 @@
+
+
+.sidebar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 70px;
+  width: 75px;
+  background-color: white;
+  z-index: 200;
+  padding-top: 5px;
+  cursor:pointer;
+}
+
+
+
+.sidebar-link
+{
+  
+  height: 80px;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.sidebar-link:hover{
+  background-color: lightgray;
+}
+
+/* THis targets all divs inside sidebar-link class*/
+.sidebar-link img{
+  height: 27px;
+  margin-bottom: 4px;
+}
+
+.sidebar-link div{
+  font-family: Roboto, Arial;
+  font-size: 10px;
+
+}

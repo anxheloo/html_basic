@@ -1438,3 +1438,203 @@ function update() {
 }
 
 */
+
+/* 
+----------------------------------------------------------------------------------------------------
+33.DOM -> Document Object Model (API), An Interface for changing the content of a page.
+----------------------------------------------------------------------------------------------------
+
+console.log(document);
+console.log(document.title); // print tittle of our HTML page
+console.log(document.URL); // print URL
+
+document.title = "This is my new Title"; // change title
+console.log(document.title); // print new title
+
+//1. Select element by id.
+
+// save element with id = "myDate" into an variable
+let element = document.getElementById("myDate");
+// change the background color of that element
+element.style.backgroundColor = "green";
+
+//2. Select element by attribute name , In our case we are selecting radio button elements from the same group name = "temp".
+let radios = document.getElementsByName("temp");
+console.log(radios);
+
+
+//3.
+let element = document.body; // select the entire body
+// element.style.backgroundColor = "blue"; // change the backgroundColor of the body
+let child = element.firstElementChild; // select the first element of the body
+child.style.backgroundColor = "lightgreen"; // change the background color of the child element
+let lastChild = element.lastElementChild; // the last element of our HTML body is <script>, so we need to pay attention
+
+
+
+//4. 
+let element = document.querySelector("#dessert"); // we are selecting
+let parent = element.parentElement; // select the parent element of our dessert
+parent.style.backgroundColor = "lightgreen"; // change the background color of our parent element, in our case parent is the whole body.
+
+
+//5. change the background color of the first element of the #dessert list
+let element = document.querySelector("#dessert li:first-child");
+element.style.backgroundColor = "lightgreen";
+
+
+//6. crate an array from children elements and change their background color
+let element = document.querySelector("#dessert");
+let children = Array.from(element.children);
+children.forEach((child) => (child.style.backgroundColor = "lightgreen"));
+*/
+
+/* 
+--------------------------------------------------------------
+33.ADD/CHANGE HTML ELEMENTS
+   .innerHTML ( vulnerable to XSS attacks)
+   .textContent ( more secure )
+--------------------------------------------------------------
+
+// add an <h1> tag at the body
+const nameTag = document.createElement("h1");
+nameTag.innerHTML = "Bro";
+document.body.append(nameTag);
+
+
+// accept user prompt
+const nameTag = document.createElement("h1");
+nameTag.textContent = window.prompt("Enter your name: ");
+document.body.append(nameTag);
+
+// add another element inside the fruit list
+const myList = document.querySelector("#fruit");
+const listItem = document.createElement("li");
+listItem.textContent = "Mango";
+myList.insertBefore(listItem, myList.getElementsByTagName("li")[1]);
+*/
+
+/* 
+34. addEventListener(event, function, useCapture). 
+    We can add many event handlers to one element.
+
+// When the mouse enters the box, its colors change from red to blue, when it leaves, color changes back to red.
+let myDiv = document.getElementById("myDiv");
+
+myDiv.addEventListener("mouseover", changeColor);
+myDiv.addEventListener("mouseleave", changeColor2);
+
+function changeColor() {
+  myDiv.style.backgroundColor = "blue";
+}
+
+function changeColor2() {
+  myDiv.style.backgroundColor = "red";
+}
+*/
+
+/* 
+-------------------------------------------------------------
+DETECT KEY PRESSES
+-------------------------------------------------------------
+
+// detect key pressed
+window.addEventListener("keydown", (event) => console.log(event.key));
+
+
+// a simple app to move the box using key pressed
+const myDiv = document.getElementById("myDiv");
+window.addEventListener("keydown", move);
+let x = 0;
+let y = 0;
+
+function move(event) {
+  switch (event.key) {
+    case "ArrowDown":
+      y += 5;
+      myDiv.style.top = y + "px";
+      break;
+
+    case "ArrowUp":
+      y -= 5;
+      myDiv.style.top = y + "px";
+      break;
+
+    case "ArrowRight":
+      x += 5;
+      myDiv.style.left = x + "px";
+      break;
+
+    case "ArrowLeft":
+      x -= 5;
+      myDiv.style.left = x + "px";
+      break;
+
+    default:
+      break;
+  }
+}
+
+*/
+
+/* 
+--------------------------------------
+34.Simple Animations
+-------------------------------------
+
+// make the box moves diagonally
+const myButton = document.getElementById("myButton");
+const myAnimation = document.getElementById("myDiv");
+
+myButton.addEventListener("click", begin);
+
+function begin() {
+  let timerId = null;
+  let x = 0;
+  let y = 0;
+
+  timerId = setInterval(frame, 5);
+
+  function frame() {
+    if (x >= 200 || y >= 200) {
+      clearInterval(timerId);
+    } else {
+      x += 1;
+      y += 1;
+      myAnimation.style.left = x + "px";
+      myAnimation.style.top = y + "px";
+    }
+  }
+}
+
+
+// make the box rotate and move diagonally
+const myButton = document.getElementById("myButton");
+const myAnimation = document.getElementById("myDiv");
+
+myButton.addEventListener("click", begin);
+
+function begin() {
+  let timerId = null;
+  let degrees = 0;
+  let x = 0;
+  let y = 0;
+
+  timerId = setInterval(frame, 5);
+
+  function frame() {
+    if (x >= 200 || y >= 200) {
+      clearInterval(timerId);
+    } else {
+      degrees += 2;
+      x += 1;
+      y += 1;
+      degrees += 1;
+      myAnimation.style.transform = "rotateZ(" + degrees + "deg)";
+      myAnimation.style.left = x + "px";
+      myAnimation.style.top = y + "px";
+    }
+  }
+} 
+
+*/
