@@ -1,39 +1,72 @@
+    
+    
+    /* If we start this code with '.' , it means we are targeting a class name instead of element name */
     .subscribe-button {
-      background-color: rgb(199, 0, 0);
-      color: white;
-      border: none;
+      background-color: rgb(199, 0, 0);  /* background color of the button */
+      color: white; /* change the text color */
+      border: none;   /* remove the border from the button */
+      /* 
       height: 36px;
       width: 100px;
-      border-radius: 2px;
-      cursor: pointer;
-      margin-right: 10px;
-      transition: opacity 0.2s;
-      vertical-align: top;
+
+        Using 'height' and 'width' property is good but,  when the text is too long, it will overflow from the button. 
+        A better way for this is to use padding, so whatever text we have, the button will automatically resize with the text, keeping the padding.
+      */
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 16px;
+      padding-right: 16px;
+
+      border-radius: 2px; /* make rounded corners  */
+      cursor: pointer;    /* change the coursor when we enter the button area(hover) */
+      margin-right: 10px;  /* add space to the right of this button*/
+      transition: opacity 0.2s; /* time it takes for the pseudo-classes to end its transition effect, 
+                                   in this case 'opacity effect' . 'transition property gives us more control on the effects'*/
+      vertical-align: top; /* instead of aligning the buttons by text, we align everything to the top*/
     }
 
+
+    /* this pseudo-class activfates when we hover over the button, its opacity changes to 70%*/
     .subscribe-button:hover {
       opacity: 0.7;
     }
 
+    /* this pseudo-class activates when we click on the button*/
     .subscribe-button:active {
       opacity: 0.3;
     }
 
+
+
+    /* If we start this code with '.' , it means we are targeting a class name instead of element name */
     .join-button {
       background-color: transparent;
       color: rgb(45, 91, 218);
       border-color: rgb(45, 91, 218);
       border-style: solid;
       border-width: 1px;
+      /* 
       height: 36px;
-      width: 70px;
+      width: 100px;
+      
+      Using 'height' and 'width' property is good but,  when the text is too long, it will overflow from the button. 
+      A better way for this is to use padding, so whatever text we have, the button will automatically resize with the text, keeping padding.
+      */
+        padding-top: 9px;
+        padding-bottom: 9px;
+        padding-left: 16px;
+        padding-right: 16px;
+
       border-radius: 2px;
       cursor: pointer;
       margin-right: 10px;
-      transition: background-color 0.2s, color 0.2s;
-      vertical-align: top;
+      transition: background-color 0.2s, color 0.2s; /* time it takes for the pseudo-classes to end its transition effect, 
+                                                        in this case 'opacity effect' . 
+                                                        'transition property gives us more control on the effects'*/
+      vertical-align: top; /* instead of aligning the buttons by text, we align everything to the top*/
     }
 
+    /* this is called a pseudo-class. When we hover over the button, its opacity changes to 70%*/
     .join-button:hover {
       background-color: rgb(45, 91, 218);
       color: white;
@@ -48,16 +81,29 @@
       color: white;
       border: none;
       border-color: rgba(34, 137, 255, 0.74);
-      height: 36px;
-      width: 75px;
+      /* 
+            height: 36px;
+            width: 75px;
+      
+              Using 'height' and 'width' property is good but,  when the text is too long, it will overflow from the button. 
+              A better way for this is to use padding, so whatever text we have, the button will automatically resize with the text, keeping the padding.
+            */
+      padding-top: 10px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      padding-right: 16px;
+
       border-radius: 18px;
-      font-weight: bold;
-      font-size: 15px;
-      cursor: pointer;
+      font-weight: bold;  /* make our font bold */
+      font-size: 15px;    /* set font size to 15px*/
+      cursor: pointer;    /* when we hover over the button, we get a nice pointer */
       transition: box-shadow 0.2s;
-      vertical-align: top;
+      vertical-align: top; /* instead of aligning the buttons by text, we align everything to the top*/
     }
 
+    /* this pseudo code creates a shadow when we hover over the button */
     .tweet-button:hover {
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2); /* this takes 4 values: horizonal position, vertical position, blur, color.  */
+      /* rgba(0,0,0,0.2) vs rgb(0,0,0) -> in rgba the last value is for the opacity of the color.*/
     }
+
