@@ -1,0 +1,71 @@
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.mainDiv{
+  display: inline-block;
+  width: 200px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-right: 15px;
+}
+
+
+
+.myImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+
+.mainText {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.secondDiv{
+  margin-bottom: 10px;
+}
+
+
+.profilePicture {
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+
+
+
+.mutualFriends{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2px;
+  color: grey;
+}
+
+
+.myButton{
+  margin-left: 10px;
+  background-color: rgb(103, 103, 255);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
