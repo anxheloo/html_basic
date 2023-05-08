@@ -8,33 +8,35 @@
   </head>
 
   <body style="padding-bottom: 1000px;">
-    <div style="display: flex; flex-direction: row;">
+
+    <div style="display: flex; flex-direction: row;"> <!-- align items horizontally-->
       <div style="background-color: lightblue;">div 1 text</div>
       <div style="background-color: lightpink;">div 2 <p>text</p></div>
     </div>
 
-
-  <div style="display: flex; flex-direction: row;margin-top: 30px;">
+ 
+  <div style="display: flex; flex-direction: row; margin-top: 30px;">
     <div style="background-color: lightblue; width: 100px;">100px</div>
-     <div style="background-color: lightpink; flex: 1;">flex 1 <p>text</p></div>
+    <div style="background-color: lightpink; flex: 1;">flex 1 <p>text</p></div>
   </div>
 
-  <div style="display: flex; flex-direction: row;margin-top: 30px;">
+  <!--flex: 1 and flex: 2 works similary to css grid 1fr, 2fr . The difference is that in CSS grid, we define the columns in the 
+  parent div, while here in CSS flex, we define the display and flex-direction, while the culumns width we define in the child div.-->
+  <div style="display: flex; flex-direction: row; margin-top: 30px;">
     <div style="background-color: lightblue; width: 100px;">100px</div>
-    <div style="background-color: lightpink; flex: 1;">flex 1 </div>
+    <div style="background-color: lightpink; flex: 1;">flex 1 </div> 
     <div style="background-color: lightblue; flex: 2;">flex 2</div>
   </div>
 
   <div style=
-  "display: flex; 
-  flex-direction: row;
+  "display: flex;  
+  flex-direction: row;   /* -->  show items horizontally*/
   margin-top: 30px;
   height:70px;
   border-width: 1px;
   border-style: solid;
   border-color: gray;
-  justify-content: center;"
-  >
+  justify-content: center;">   <!--  align items horizontally-->  
       <div style="background-color: lightblue; width: 100px;">100px</div>
       <div style="background-color: lightpink; width: 100px;">100px 1 </div>
       <div style="background-color: lightblue; width: 100px;">100px 2</div>
@@ -49,7 +51,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: gray;
-    justify-content: space-between;">
+    justify-content: space-between;"> <!--  align items horizontally with space between-->
     <div style="background-color: lightblue; width: 100px;">100px</div>
     <div style="background-color: lightpink; width: 100px;">100px 1 </div>
     <div style="background-color: lightblue; width: 100px;">100px 2</div>
@@ -63,12 +65,29 @@
         border-width: 1px;
         border-style: solid;
         border-color: gray;
-        justify-content: space-between;
-        align-items: center;">
+        justify-content: space-between;   /*  align items horizontally with space between */
+        align-items: center;">            <!-- align items vertically-->
       <div style="background-color: lightblue; width: 100px;">100px</div>
       <div style="background-color: lightpink; width: 100px;">100px 1 </div>
       <div style="background-color: lightblue; width: 100px;">100px 2</div>
     </div>
+
+
+
+        <div style="display: flex; 
+                flex-direction: row;
+                margin-top: 30px;
+                height:70px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: gray;
+                justify-content: end;    /* show items at the end */
+                align-items: center;">   <!-- align items vertically in the center of their parent container-->
+          <div style="background-color: lightblue; width: 100px;">100px</div>
+          <div style="background-color: lightpink; width: 100px;">100px 1 </div>
+          <div style="background-color: lightblue; width: 100px;">100px 2</div>
+        </div>
+
 
   </body>
 

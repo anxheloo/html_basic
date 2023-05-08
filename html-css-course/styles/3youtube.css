@@ -1,0 +1,118 @@
+
+/* HEADER */
+
+.header {
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-section{
+  background-color: lightgreen;
+  width: 200px;
+}
+
+.hamburger-menu{
+
+}
+
+.youtube-logo{
+
+}
+
+.middle-section{
+  background-color: lightpink;
+  flex: 1;
+  margin-left: 50px;
+  margin-right: 30px;
+  max-width: 500px;  /* maximum width this element can go is 500px*/
+}
+
+.right-section{
+    background-color: lightblue;
+    width: 200px;
+
+}
+
+
+/* BODY*/
+
+body {
+  margin: 0;  /* make body margin = 0*/
+}
+
+p {
+  font-family: Roboto, Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.grid_container {
+  /* we wrapped every element inside this big div container and display: grid to control the way our elements display. */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 25px;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.search-bar {
+  font-size: 20px;
+  margin-left: 12px;
+  display: block;
+  /* takes the full width of the screen.  */
+}
+
+.video-preview {
+  /* width: 300px; */
+}
+
+.videoProfileAndInfo {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 10px;
+}
+
+.video-title {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+
+
+.profile-picture {
+  width: 100%;
+  border-radius: 100px;
+}
+
+
+
+.video-info {
+  /* display: inline-block;
+  width: 236px; --> we remove these both properties cuz we used at .videoProfileAndInfo display grid, and we specified 2 columns. */
+  /* margin-left: 10px;  --> we remove this and add at .videoProfileAndInfo div, column-gap = 10px.*/
+}
+
+.video-author {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+  margin-bottom: 4px;
+}
+
+.video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+
+
+.thumbnail-row {
+  margin-bottom: 12px;
+}

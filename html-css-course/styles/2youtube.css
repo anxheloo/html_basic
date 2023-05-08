@@ -1,0 +1,73 @@
+p {
+  font-family: Roboto, Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.grid_container {  /* we wrapped every element inside this big div container and display: grid to control the way our elements display. */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 25px;
+}
+
+.thumbnail {
+  width: 100%;
+}
+
+.search-bar {
+  font-size: 20px;
+  margin-left: 12px;
+  display: block;
+  /* takes the full width of the screen.  */
+}
+
+.video-preview {
+  /* width: 300px; */ 
+}
+
+.videoProfileAndInfo{
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 10px;
+}
+
+.video-title {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+
+
+.profile-picture {
+  width: 100%;
+  border-radius: 100px;
+}
+
+
+
+.video-info {
+  /* display: inline-block;
+  width: 236px; --> we remove these both properties cuz we used at .videoProfileAndInfo display grid, and we specified 2 columns. */ 
+  /* margin-left: 10px;  --> we remove this and add at .videoProfileAndInfo div, column-gap = 10px.*/
+}
+
+.video-author {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+  margin-bottom: 4px;
+}
+
+.video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+
+
+.thumbnail-row {
+  margin-bottom: 12px;
+}
