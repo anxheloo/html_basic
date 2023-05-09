@@ -28,6 +28,44 @@
   bottom: 0;
   background-color: white;
   width: 72px;
+
+  /* make our sidebar cover our header, */
+  z-index: 200;
+
+  padding-top: 5px;
+}
+
+.sidebar:hover {
+  cursor: pointer;
+}
+
+.sidebar-link{
+  background-color: white;
+  height: 76px;
+  margin-bottom: 1px;
+
+  /* center our items vertically and horizontally*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* make our icon and text on the sidebar appears in columns instead of rows*/
+  flex-direction: column;
+}
+
+.sidebar-link:hover{
+  background-color: lightgray;
+}
+
+/* We are targeting all images on sidebar-link*/
+.sidebar-link img{
+height: 25px;
+margin-bottom: 4px;
+}
+
+.sidebar-link div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
 }
 
 .left-section{
@@ -81,7 +119,30 @@ border-width: 1px;
 border-style: solid;
 border-color: rgb(187, 187, 187);
 margin-left: -1px;
+position: relative;
 }
+
+/* adjust the tooltip*/
+.search-button .search-tooltip{
+  position: absolute;
+  top: 53px;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  opacity: 0;
+  pointer-events: none; /* Disable hover | before, when our mouse goes to the tooltip it shows, now it shows only when we hover over the button cuz we set the pointer events on tooltip to none.*/
+}
+
+/* set the opacity of search-tooltip to 1*/
+.search-button:hover .search-tooltip{
+  opacity: 1;
+}
+
 
 .search-icon{
   width: 25px;
@@ -97,6 +158,22 @@ margin-left: -1px;
   border-radius: 50px;
   border: none;
   background-color: rgb(218, 217, 217);
+  position: relative;
+}
+
+.voice-search-button .search-by-voice {
+  position: absolute;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  top: 53px;
+  opacity: 0;
+  white-space: nowrap;  /* make the text wide instead of wrapped in a box*/
+}
+
+.voice-search-button:hover .search-by-voice{
+  opacity: 1;
 }
 
 .voice-search-icon{
@@ -179,6 +256,28 @@ p {
   row-gap: 25px;
 }
 
+/* make our page responsive, so when we decrease our page, the content gets adjusted. THis will activate when our
+   screen size gets smaller than 840px*/
+@media (max-width:840px){
+  .grid_container{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* this will activate when our screen is smaller than 600px*/
+@media (max-width:600px) {
+  .grid_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* this will activate when our screen is bigger than 1000*/
+@media (min-width:1000px) {
+  .grid_container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
 .thumbnail {
   width: 100%;
 }
@@ -205,7 +304,7 @@ p {
 
 
 .profile-picture {
-  width: 100%;
+  width: 80%;
   border-radius: 100px;
 }
 
